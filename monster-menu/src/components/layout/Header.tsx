@@ -12,7 +12,7 @@ export default function Header() {
     <header className="bg-brown-950 text-gray-100 p-4 border-b-4 border-brown-800">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          <Link href="/" className="text-3xl font-bold font-serif text-gray-100">
+          <Link href="/" className="text-3xl font-bold font-serif text-gray-700">
             Monster Menu
           </Link>
           <nav className="hidden md:flex space-x-6">
@@ -35,8 +35,8 @@ export default function Header() {
               <span className="text-brown-300 ml-2">({player.cartName})</span>
             </div>
             <div className="flex space-x-3">
-              <span className="bg-brown-700 px-3 py-1 rounded border border-brown-600 text-gray-100">💰 {player.money}</span>
-              <span className="bg-brown-700 px-3 py-1 rounded border border-brown-600 text-gray-100">⭐ {player.reputation}</span>
+              <span className="bg-brown-700 px-3 py-1 rounded border border-brown-600 text-gray-700">💰 {player.money}</span>
+              <span className="bg-brown-700 px-3 py-1 rounded border border-brown-600 text-gray-700">⭐ {player.reputation}</span>
             </div>
           </div>
         )}
