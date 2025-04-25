@@ -1,12 +1,13 @@
 {
-  "buildCommand": "cd monster-menu && npm run build",
-  "outputDirectory": "monster-menu/.next",
-  "installCommand": "cd monster-menu && npm install",
   "framework": "nextjs",
   "regions": ["iad1"],
   "git": {
     "deploymentEnabled": {
       "master": true
     }
-  }
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "rootDirectory": "monster-menu"
 } 
