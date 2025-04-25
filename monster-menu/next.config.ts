@@ -4,9 +4,7 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     appDir: true,
-  },
-  // Specify the src directory as the root
-  dir: './src',
+  }
 }
 
 export default nextConfig
