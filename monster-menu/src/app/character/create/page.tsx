@@ -12,12 +12,14 @@ export default function CharacterCreation() {
     name: '',
     cartName: '',
     stats: {
-      hunt: 1,
-      cook: 1,
-      charm: 1,
+      hunt: 0,
+      cook: 0,
+      charm: 0,
     },
     signatureDish: '',
   });
+
+  const [remainingPoints, setRemainingPoints] = useState(2);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +27,7 @@ export default function CharacterCreation() {
       ...formData,
       name: formData.name || '',
       cartName: formData.cartName || '',
-      stats: formData.stats || { hunt: 1, cook: 1, charm: 1 },
+      stats: formData.stats || { hunt: 0, cook: 0, charm: 0 },
       health: { current: 10, max: 10 },
       durability: { current: 10, max: 10 },
       inventory: {
@@ -53,13 +55,24 @@ export default function CharacterCreation() {
   };
 
   const handleStatChange = (stat: keyof PlayerCharacter['stats'], value: number) => {
+    const currentStats = formData.stats || { hunt: 0, cook: 0, charm: 0 };
+    const currentValue = currentStats[stat];
+    const diff = value - currentValue;
+    
+    // Check if we have enough points to make this change
+    if (remainingPoints - diff < 0 || value < 0 || value > 2) {
+      return;
+    }
+
     setFormData((prev) => ({
       ...prev,
       stats: {
-        ...(prev.stats || { hunt: 1, cook: 1, charm: 1 }),
-        [stat]: Math.max(1, Math.min(5, value)),
+        ...(prev.stats || { hunt: 0, cook: 0, charm: 0 }),
+        [stat]: value,
       },
     }));
+    
+    setRemainingPoints(remainingPoints - diff);
   };
 
   return (
@@ -109,7 +122,12 @@ export default function CharacterCreation() {
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold">Stats (1-5 points each)</h2>
+          <div className="flex justify-between items-center">
+            <h2 className="text-xl font-semibold">Stats (0-2 points each)</h2>
+            <span className="text-sm font-medium text-gray-600">
+              Remaining Points: {remainingPoints}
+            </span>
+          </div>
           <div className="grid grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -117,8 +135,8 @@ export default function CharacterCreation() {
               </label>
               <input
                 type="number"
-                min="1"
-                max="5"
+                min="0"
+                max="2"
                 value={formData.stats?.hunt}
                 onChange={(e) => handleStatChange('hunt', parseInt(e.target.value))}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
@@ -130,8 +148,8 @@ export default function CharacterCreation() {
               </label>
               <input
                 type="number"
-                min="1"
-                max="5"
+                min="0"
+                max="2"
                 value={formData.stats?.cook}
                 onChange={(e) => handleStatChange('cook', parseInt(e.target.value))}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
@@ -143,14 +161,17 @@ export default function CharacterCreation() {
               </label>
               <input
                 type="number"
-                min="1"
-                max="5"
+                min="0"
+                max="2"
                 value={formData.stats?.charm}
                 onChange={(e) => handleStatChange('charm', parseInt(e.target.value))}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
               />
             </div>
           </div>
+          <p className="text-sm text-gray-500 mt-2">
+            Distribute 2 stat points among Hunt, Cook, and Charm. You can increase these stats later through upgrades.
+          </p>
         </div>
 
         <button

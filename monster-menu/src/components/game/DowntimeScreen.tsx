@@ -34,7 +34,7 @@ const upgrades = [
     effect: (player: any) => ({
       stats: {
         ...player.stats,
-        hunt: Math.min(5, player.stats.hunt + 1),
+        hunt: player.stats.hunt + 1,
       },
     }),
   },
@@ -46,7 +46,7 @@ const upgrades = [
     effect: (player: any) => ({
       stats: {
         ...player.stats,
-        cook: Math.min(5, player.stats.cook + 1),
+        cook: player.stats.cook + 1,
       },
     }),
   },
@@ -58,7 +58,7 @@ const upgrades = [
     effect: (player: any) => ({
       stats: {
         ...player.stats,
-        charm: Math.min(5, player.stats.charm + 1),
+        charm: player.stats.charm + 1,
       },
     }),
   },
