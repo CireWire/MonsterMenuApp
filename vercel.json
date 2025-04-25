@@ -6,8 +6,7 @@
       "master": true
     }
   },
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
-  "installCommand": "npm install",
-  "rootDirectory": "monster-menu"
+  "buildCommand": "cd monster-menu && npm run build",
+  "outputDirectory": "monster-menu/.next",
+  "installCommand": "cd monster-menu && npm install"
 } 
