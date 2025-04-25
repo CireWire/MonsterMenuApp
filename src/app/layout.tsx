@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Cinzel } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { GameStateProvider } from "@/contexts/GameStateContext";
 import Layout from "@/components/layout/Layout";
@@ -22,14 +21,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cinzel.variable}>
-      <head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8625420650623720"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-      </head>
       <body className={cinzel.className}>
         <GameStateProvider>
           <Layout>{children}</Layout>
