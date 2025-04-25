@@ -2,8 +2,6 @@
 
 A digital adaptation of the Monster Menu tabletop role-playing game where players hunt monsters, harvest ingredients, cook unique dishes, and sell them to build their culinary reputation.
 
-![Monster Menu Banner](https://via.placeholder.com/800x400)
-
 ## 📋 Overview
 
 Monster Chef is an interactive single-player RPG where you play as a wandering chef who hunts monsters for ingredients. Hunt beasts in the wild, harvest choice ingredients, craft delicious recipes, and sell your creations to earn coin and reputation. Upgrade your cart, improve your skills, and become the most renowned Monster Chef in the land!
