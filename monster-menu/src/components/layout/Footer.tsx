@@ -12,13 +12,13 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex gap-12">
-            <Link href="/privacy" className="text-gray-300 hover:text-brown-400 transition-colors px-6 py-3 border border-brown-700 rounded-lg">
+            <Link href="/privacy" className="text-gray-700 hover:text-gray-800 transition-colors px-6 py-3 border border-brown-700 rounded-lg">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-gray-300 hover:text-brown-400 transition-colors px-6 py-3 border border-brown-700 rounded-lg">
+            <Link href="/terms" className="text-gray-700 hover:text-gray-800 transition-colors px-6 py-3 border border-brown-700 rounded-lg">
               Terms of Service
             </Link>
-            <a href="https://sites.google.com/view/riotkids-garage" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brown-400 transition-colors px-6 py-3 border border-brown-700 rounded-lg">
+            <a href="https://sites.google.com/view/riotkids-garage" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-800 transition-colors px-6 py-3 border border-brown-700 rounded-lg">
               Contact
             </a>
           </div>

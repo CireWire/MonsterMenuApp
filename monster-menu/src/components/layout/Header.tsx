@@ -16,13 +16,13 @@ export default function Header() {
             Monster Menu
           </Link>
           <nav className="hidden md:flex space-x-6">
-            <Link href="/game" className="text-gray-300 hover:text-brown-400 transition-colors">
+            <Link href="/game" className="text-gray-700 hover:text-gray-800 transition-colors">
               Game
             </Link>
-            <Link href="/journal" className="text-gray-300 hover:text-brown-400 transition-colors">
+            <Link href="/journal" className="text-gray-700 hover:text-gray-800 transition-colors">
               Journal
             </Link>
-            <Link href="/about" className="text-gray-300 hover:text-brown-400 transition-colors">
+            <Link href="/about" className="text-gray-700 hover:text-gray-800 transition-colors">
               About
             </Link>
           </nav>
