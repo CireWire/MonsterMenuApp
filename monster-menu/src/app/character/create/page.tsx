@@ -56,7 +56,7 @@ export default function CharacterCreation() {
     setFormData((prev) => ({
       ...prev,
       stats: {
-        ...prev.stats,
+        ...(prev.stats || { hunt: 1, cook: 1, charm: 1 }),
         [stat]: Math.max(1, Math.min(5, value)),
       },
     }));

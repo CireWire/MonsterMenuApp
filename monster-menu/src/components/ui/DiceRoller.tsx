@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 
 interface DiceRollerProps {
   onRoll: (result: number) => void;
+  disabled?: boolean;
 }
 
-export default function DiceRoller({ onRoll }: DiceRollerProps) {
+export default function DiceRoller({ onRoll, disabled = false }: DiceRollerProps) {
   const [isRolling, setIsRolling] = useState(false);
   const [currentRoll, setCurrentRoll] = useState<number | null>(null);
 
   const rollDice = () => {
-    if (isRolling) return;
+    if (isRolling || disabled) return;
 
     setIsRolling(true);
     setCurrentRoll(null);
@@ -38,9 +39,9 @@ export default function DiceRoller({ onRoll }: DiceRollerProps) {
     <div className="flex flex-col items-center">
       <button
         onClick={rollDice}
-        disabled={isRolling}
+        disabled={isRolling || disabled}
         className={`px-6 py-3 rounded-lg text-white font-semibold ${
-          isRolling
+          isRolling || disabled
             ? 'bg-gray-400 cursor-not-allowed'
             : 'bg-blue-600 hover:bg-blue-700'
         }`}
