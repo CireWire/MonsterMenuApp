@@ -3,24 +3,22 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-brown-950 text-black py-8 border-t-4 border-brown-800">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <p className="text-sm">
-              © {new Date().getFullYear()} Helix Corporation. All rights reserved.
-            </p>
+    <footer className="bg-brown-950 text-gray-100 p-4 border-t-4 border-brown-800">
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="text-sm text-gray-400">
+            © {new Date().getFullYear()} The Helix Corporation. All rights reserved.
           </div>
-          <div className="flex gap-12">
-            <Link href="/privacy" className="text-gray-700 hover:text-gray-800 transition-colors px-6 py-3 border border-brown-700 rounded-lg">
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+            <Link href="/privacy" className="text-gray-400 hover:text-gray-300 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-gray-700 hover:text-gray-800 transition-colors px-6 py-3 border border-brown-700 rounded-lg">
+            <Link href="/terms" className="text-gray-400 hover:text-gray-300 transition-colors">
               Terms of Service
             </Link>
-            <a href="https://sites.google.com/view/riotkids-garage" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-800 transition-colors px-6 py-3 border border-brown-700 rounded-lg">
+            <Link href="/contact" className="text-gray-400 hover:text-gray-300 transition-colors">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>
